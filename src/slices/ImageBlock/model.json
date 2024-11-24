@@ -1,0 +1,30 @@
+{
+  "id": "image_block",
+  "type": "SharedSlice",
+  "name": "ImageBlock",
+  "description": "ImageBlock",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "imageBlock": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {
+              "width": null,
+              "height": null
+            },
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

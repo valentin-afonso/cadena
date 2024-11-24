@@ -1,0 +1,66 @@
+{
+  "id": "hero_section",
+  "type": "SharedSlice",
+  "name": "HeroSection",
+  "description": "HeroSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "tag": {
+          "type": "Text",
+          "config": {
+            "label": "Tag",
+            "placeholder": ""
+          }
+        },
+        "tag_status": {
+          "type": "Text",
+          "config": {
+            "label": "Tag status",
+            "placeholder": ""
+          }
+        },
+        "titre": {
+          "type": "Text",
+          "config": {
+            "label": "Titre",
+            "placeholder": ""
+          }
+        },
+        "custom_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Custom title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,strong,em"
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "strong,em,hyperlink,embed,list-item,o-list-item,rtl,paragraph"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -2,6 +2,8 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import { Tag, TagStatus, TagText } from "@/ui/Tag";
+import GridLayout from "@/ui/GridLayout";
 /**
  * Props for `HeroSection`.
  */
@@ -18,18 +20,26 @@ const HeroSection = ({ slice }: HeroSectionProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="bg-bg-primary pb-24"
     >
-      <div className="flex">
-        <div>
-          {slice.primary.tag_status}
-          {slice.primary.tag}
+      <GridLayout>
+        <div className="flex items-center">
+          <div className="w-[490px] max-w-full flex flex-col gap-6">
+            <div className=" flex flex-col gap-4">
+              <Tag>
+                <TagStatus>{slice.primary.tag_status}</TagStatus>
+                <TagText>{slice.primary.tag}</TagText>
+              </Tag>
+              <PrismicRichText field={slice.primary.custom_title} />
+            </div>
+            <div className="text-xl">
+              <PrismicRichText field={slice.primary.text} />
+            </div>
+          </div>
 
-          <PrismicRichText field={slice.primary.custom_title} />
-          <PrismicRichText field={slice.primary.text} />
+          <PrismicNextImage field={slice.primary.image} />
         </div>
-
-        <PrismicNextImage field={slice.primary.image} />
-      </div>
+      </GridLayout>
     </section>
   );
 };

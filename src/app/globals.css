@@ -10,6 +10,13 @@
 body {
   font-size: 16px;
 }
+h1 {
+  @apply text-4xl;
+  @apply font-bold;
+}
 h1 strong {
-  color: #712fff;
+  @apply text-purple;
+}
+p {
+  @apply m-0;
 }

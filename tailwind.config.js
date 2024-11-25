@@ -12,7 +12,13 @@ module.exports = {
     "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "bg-primary": "#FAF8F5",
+        purple: "#712fff",
+        "purple-light": "#F9F5FF",
+      },
+    },
   },
   plugins: [],
 };

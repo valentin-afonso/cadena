@@ -5,6 +5,7 @@ import * as prismic from "@prismicio/client";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import GridLayout from "@/ui/GridLayout";
 
 // This component renders your homepage.
 //

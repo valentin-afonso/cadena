@@ -1,5 +1,6 @@
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
+import Header from "@/ui/Header";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
 
@@ -12,7 +13,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>
   );

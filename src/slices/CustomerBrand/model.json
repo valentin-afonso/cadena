@@ -1,0 +1,36 @@
+{
+  "id": "customer_brand",
+  "type": "SharedSlice",
+  "name": "CustomerBrand",
+  "description": "CustomerBrand",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "logo": {
+          "type": "Image",
+          "config": {
+            "label": "Logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "svg": {
+          "type": "StructuredText",
+          "config": {
+            "label": "svg",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "embed"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

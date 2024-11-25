@@ -4,8 +4,10 @@ import dynamic from "next/dynamic";
 
 export const components = {
   alternate_grid: dynamic(() => import("./AlternateGrid")),
+  customer_brand: dynamic(() => import("./CustomerBrand")),
   hero_section: dynamic(() => import("./HeroSection")),
   image_block: dynamic(() => import("./ImageBlock")),
   navigation_item: dynamic(() => import("./NavigationItem")),
   rich_text: dynamic(() => import("./RichText")),
+  trusted_by: dynamic(() => import("./TrustedBy")),
 };

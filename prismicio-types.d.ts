@@ -50,6 +50,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | TrustedBySlice
   | HeroSectionSlice
   | AlternateGridSlice
   | ImageBlockSlice
@@ -389,6 +390,61 @@ export type AlternateGridSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *CustomerBrand → Default → Primary*
+ */
+export interface CustomerBrandSliceDefaultPrimary {
+  /**
+   * Logo field in *CustomerBrand → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: customer_brand.default.primary.logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * svg field in *CustomerBrand → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: customer_brand.default.primary.svg
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  svg: prismic.RichTextField;
+}
+
+/**
+ * Default variation for CustomerBrand Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CustomerBrandSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CustomerBrandSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CustomerBrand*
+ */
+type CustomerBrandSliceVariation = CustomerBrandSliceDefault;
+
+/**
+ * CustomerBrand Shared Slice
+ *
+ * - **API ID**: `customer_brand`
+ * - **Description**: CustomerBrand
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CustomerBrandSlice = prismic.SharedSlice<
+  "customer_brand",
+  CustomerBrandSliceVariation
+>;
+
+/**
  * Primary content in *HeroSection → Default → Primary*
  */
 export interface HeroSectionSliceDefaultPrimary {
@@ -628,6 +684,76 @@ export type RichTextSlice = prismic.SharedSlice<
   RichTextSliceVariation
 >;
 
+/**
+ * Item in *TrustedBy → Default → Primary → Logo*
+ */
+export interface TrustedBySliceDefaultPrimaryLogoItem {
+  /**
+   * image field in *TrustedBy → Default → Primary → Logo*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: trusted_by.default.primary.logo[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *TrustedBy → Default → Primary*
+ */
+export interface TrustedBySliceDefaultPrimary {
+  /**
+   * Text field in *TrustedBy → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: trusted_by.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * Logo field in *TrustedBy → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: trusted_by.default.primary.logo[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  logo: prismic.GroupField<Simplify<TrustedBySliceDefaultPrimaryLogoItem>>;
+}
+
+/**
+ * Default variation for TrustedBy Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TrustedBySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TrustedBySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TrustedBy*
+ */
+type TrustedBySliceVariation = TrustedBySliceDefault;
+
+/**
+ * TrustedBy Shared Slice
+ *
+ * - **API ID**: `trusted_by`
+ * - **Description**: TrustedBy
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TrustedBySlice = prismic.SharedSlice<
+  "trusted_by",
+  TrustedBySliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -667,6 +793,10 @@ declare module "@prismicio/client" {
       AlternateGridSliceVariation,
       AlternateGridSliceDefault,
       AlternateGridSliceImageRight,
+      CustomerBrandSlice,
+      CustomerBrandSliceDefaultPrimary,
+      CustomerBrandSliceVariation,
+      CustomerBrandSliceDefault,
       HeroSectionSlice,
       HeroSectionSliceDefaultPrimary,
       HeroSectionSliceVariation,
@@ -683,6 +813,11 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      TrustedBySlice,
+      TrustedBySliceDefaultPrimaryLogoItem,
+      TrustedBySliceDefaultPrimary,
+      TrustedBySliceVariation,
+      TrustedBySliceDefault,
     };
   }
 }

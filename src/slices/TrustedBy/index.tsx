@@ -28,7 +28,7 @@ const TrustedBy = ({ slice }: TrustedByProps): JSX.Element => {
         </p>
         <ul className="flex items-center justify-between w-full">
           {slice.primary.logo.map((item) => (
-            <li>
+            <li key={item.image.id}>
               <PrismicNextImage field={item.image} />
             </li>
           ))}

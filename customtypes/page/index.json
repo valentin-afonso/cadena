@@ -27,6 +27,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "graphic_bloc": {
+              "type": "SharedSlice"
+            },
+            "bento_grid": {
+              "type": "SharedSlice"
+            },
             "trusted_by": {
               "type": "SharedSlice"
             },

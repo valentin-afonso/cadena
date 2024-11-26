@@ -50,6 +50,8 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | GraphicBlocSlice
+  | BentoGridSlice
   | TrustedBySlice
   | HeroSectionSlice
   | AlternateGridSlice
@@ -390,6 +392,108 @@ export type AlternateGridSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *BentoGrid → Default → Primary → BentoBloc*
+ */
+export interface BentoGridSliceDefaultPrimaryBentoblocItem {
+  /**
+   * Title field in *BentoGrid → Default → Primary → BentoBloc*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bento_grid.default.primary.bentobloc[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Text field in *BentoGrid → Default → Primary → BentoBloc*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bento_grid.default.primary.bentobloc[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Image field in *BentoGrid → Default → Primary → BentoBloc*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bento_grid.default.primary.bentobloc[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * id_bloc field in *BentoGrid → Default → Primary → BentoBloc*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bento_grid.default.primary.bentobloc[].id_bloc
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  id_bloc: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *BentoGrid → Default → Primary*
+ */
+export interface BentoGridSliceDefaultPrimary {
+  /**
+   * Title field in *BentoGrid → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bento_grid.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * BentoBloc field in *BentoGrid → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bento_grid.default.primary.bentobloc[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  bentobloc: prismic.GroupField<
+    Simplify<BentoGridSliceDefaultPrimaryBentoblocItem>
+  >;
+}
+
+/**
+ * Default variation for BentoGrid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BentoGridSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BentoGridSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BentoGrid*
+ */
+type BentoGridSliceVariation = BentoGridSliceDefault;
+
+/**
+ * BentoGrid Shared Slice
+ *
+ * - **API ID**: `bento_grid`
+ * - **Description**: BentoGrid
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BentoGridSlice = prismic.SharedSlice<
+  "bento_grid",
+  BentoGridSliceVariation
+>;
+
+/**
  * Primary content in *CustomerBrand → Default → Primary*
  */
 export interface CustomerBrandSliceDefaultPrimary {
@@ -442,6 +546,81 @@ type CustomerBrandSliceVariation = CustomerBrandSliceDefault;
 export type CustomerBrandSlice = prismic.SharedSlice<
   "customer_brand",
   CustomerBrandSliceVariation
+>;
+
+/**
+ * Primary content in *GraphicBloc → Default → Primary*
+ */
+export interface GraphicBlocSliceDefaultPrimary {
+  /**
+   * Title field in *GraphicBloc → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: graphic_bloc.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Text field in *GraphicBloc → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: graphic_bloc.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Button field in *GraphicBloc → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: graphic_bloc.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField;
+
+  /**
+   * Image field in *GraphicBloc → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: graphic_bloc.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for GraphicBloc Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GraphicBlocSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<GraphicBlocSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *GraphicBloc*
+ */
+type GraphicBlocSliceVariation = GraphicBlocSliceDefault;
+
+/**
+ * GraphicBloc Shared Slice
+ *
+ * - **API ID**: `graphic_bloc`
+ * - **Description**: GraphicBloc
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GraphicBlocSlice = prismic.SharedSlice<
+  "graphic_bloc",
+  GraphicBlocSliceVariation
 >;
 
 /**
@@ -793,10 +972,19 @@ declare module "@prismicio/client" {
       AlternateGridSliceVariation,
       AlternateGridSliceDefault,
       AlternateGridSliceImageRight,
+      BentoGridSlice,
+      BentoGridSliceDefaultPrimaryBentoblocItem,
+      BentoGridSliceDefaultPrimary,
+      BentoGridSliceVariation,
+      BentoGridSliceDefault,
       CustomerBrandSlice,
       CustomerBrandSliceDefaultPrimary,
       CustomerBrandSliceVariation,
       CustomerBrandSliceDefault,
+      GraphicBlocSlice,
+      GraphicBlocSliceDefaultPrimary,
+      GraphicBlocSliceVariation,
+      GraphicBlocSliceDefault,
       HeroSectionSlice,
       HeroSectionSliceDefaultPrimary,
       HeroSectionSliceVariation,

@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 export default function NavigationLink({ link }: any) {
-  console.log(link);
   if (link.uid === "sign-up") {
     return (
       <Link

@@ -16,7 +16,6 @@ export type GraphicBlocProps = SliceComponentProps<Content.GraphicBlocSlice>;
  */
 
 const GraphicBloc = ({ slice }: GraphicBlocProps): JSX.Element => {
-  console.log(slice.primary.button);
   return (
     <section
       data-slice-type={slice.slice_type}

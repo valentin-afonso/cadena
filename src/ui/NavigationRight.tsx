@@ -1,5 +1,6 @@
 import { createClient } from "@/prismicio";
 import { PrismicNextLink } from "@prismicio/next";
+import NavigationLink from "@/ui/NavigationLink";
 
 export default async function NavigationRight() {
   const client = createClient();
@@ -7,11 +8,9 @@ export default async function NavigationRight() {
   return (
     <nav>
       <ul className="flex items-center gap-3">
-        {/* Renders top-level links */}
         {navigation.data.slices.map((slice) => (
           <li key={slice.id}>
-            <PrismicNextLink field={slice.primary.link} />
-            {/* Renders child links, if present */}
+            <NavigationLink link={slice.primary.link} />
             {slice.items.length > 0 && (
               <ul>
                 {slice.items.map((item) => (

@@ -40,12 +40,52 @@
             "allowText": true
           }
         },
-        "image": {
-          "type": "Image",
+        "images": {
+          "type": "Group",
           "config": {
-            "label": "Image",
-            "constraint": {},
-            "thumbnails": []
+            "label": "Images_first_slide",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "image_id": {
+                "type": "Text",
+                "config": {
+                  "label": "image id",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "images_second_slide": {
+          "type": "Group",
+          "config": {
+            "label": "images_second_slide",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "image_id": {
+                "type": "Text",
+                "config": {
+                  "label": "image id",
+                  "placeholder": ""
+                }
+              }
+            }
           }
         }
       },

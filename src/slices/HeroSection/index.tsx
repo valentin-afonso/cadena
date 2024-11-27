@@ -32,7 +32,7 @@ const HeroSection = ({ slice }: HeroSectionProps): JSX.Element => {
               </Tag>
               <PrismicRichText field={slice.primary.custom_title} />
             </div>
-            <div className="text-xl">
+            <div className="text-xl text-gray-secondary">
               <PrismicRichText field={slice.primary.text} />
             </div>
           </div>

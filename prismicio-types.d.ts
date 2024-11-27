@@ -549,6 +549,56 @@ export type CustomerBrandSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *GraphicBloc → Default → Primary → Images_first_slide*
+ */
+export interface GraphicBlocSliceDefaultPrimaryImagesItem {
+  /**
+   * image field in *GraphicBloc → Default → Primary → Images_first_slide*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: graphic_bloc.default.primary.images[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * image id field in *GraphicBloc → Default → Primary → Images_first_slide*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: graphic_bloc.default.primary.images[].image_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  image_id: prismic.KeyTextField;
+}
+
+/**
+ * Item in *GraphicBloc → Default → Primary → images_second_slide*
+ */
+export interface GraphicBlocSliceDefaultPrimaryImagesSecondSlideItem {
+  /**
+   * image field in *GraphicBloc → Default → Primary → images_second_slide*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: graphic_bloc.default.primary.images_second_slide[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * image id field in *GraphicBloc → Default → Primary → images_second_slide*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: graphic_bloc.default.primary.images_second_slide[].image_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  image_id: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *GraphicBloc → Default → Primary*
  */
 export interface GraphicBlocSliceDefaultPrimary {
@@ -583,14 +633,28 @@ export interface GraphicBlocSliceDefaultPrimary {
   button: prismic.LinkField;
 
   /**
-   * Image field in *GraphicBloc → Default → Primary*
+   * Images_first_slide field in *GraphicBloc → Default → Primary*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: graphic_bloc.default.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **API ID Path**: graphic_bloc.default.primary.images[]
+   * - **Documentation**: https://prismic.io/docs/field#group
    */
-  image: prismic.ImageField<never>;
+  images: prismic.GroupField<
+    Simplify<GraphicBlocSliceDefaultPrimaryImagesItem>
+  >;
+
+  /**
+   * images_second_slide field in *GraphicBloc → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: graphic_bloc.default.primary.images_second_slide[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  images_second_slide: prismic.GroupField<
+    Simplify<GraphicBlocSliceDefaultPrimaryImagesSecondSlideItem>
+  >;
 }
 
 /**
@@ -982,6 +1046,8 @@ declare module "@prismicio/client" {
       CustomerBrandSliceVariation,
       CustomerBrandSliceDefault,
       GraphicBlocSlice,
+      GraphicBlocSliceDefaultPrimaryImagesItem,
+      GraphicBlocSliceDefaultPrimaryImagesSecondSlideItem,
       GraphicBlocSliceDefaultPrimary,
       GraphicBlocSliceVariation,
       GraphicBlocSliceDefault,

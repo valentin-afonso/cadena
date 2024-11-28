@@ -1,5 +1,6 @@
 import type { Content } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
+import GridLayout from "@/ui/GridLayout";
 import {
   PrismicRichText,
   SliceComponentProps,
@@ -29,7 +30,12 @@ type RichTextProps = SliceComponentProps<Content.RichTextSlice>;
 const RichText = ({ slice }: RichTextProps): JSX.Element => {
   return (
     <section className={styles.richtext}>
-      <PrismicRichText field={slice.primary.content} components={components} />
+      <GridLayout additional_class="flex flex-col gap-4 py-24">
+        <PrismicRichText
+          field={slice.primary.content}
+          components={components}
+        />
+      </GridLayout>
     </section>
   );
 };

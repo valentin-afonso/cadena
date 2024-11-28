@@ -16,7 +16,7 @@ export default async function Socials() {
   return (
     <>
       {footer.data.slices.map((slice) => (
-        <ul className="flex gap-5">
+        <ul className="flex gap-5" key={JSON.stringify(slice)}>
           {slice.primary.social.map((item) => {
             const idBloc = item.social_id || "";
             const IconComponent = techIconMap[idBloc];

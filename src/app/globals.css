@@ -38,6 +38,9 @@ p {
 a {
   @apply inline-block;
 }
+.wrapper_sections {
+  min-height: calc(100vh - (140px + 80px));
+}
 .bento_grid > div:nth-child(3) {
   grid-column: 3 / 4;
   grid-row: 1 / span 2;

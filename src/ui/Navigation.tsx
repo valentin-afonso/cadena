@@ -7,7 +7,7 @@ export default async function Navigation() {
   const navigation = await client.getByUID("navigation", "navigation-menu");
   return (
     <nav>
-      <ul>
+      <ul className="flex gap-8">
         {/* Renders top-level links */}
         {navigation.data.slices.map((slice) => (
           <li key={slice.id}>

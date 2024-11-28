@@ -55,11 +55,29 @@ a {
     0px 1.986411213874817px 3.972822427749634px 0px rgba(68, 55, 0, 1%);
 }
 
-.slide_cards > img {
+.slide_cards img {
+  position: relative;
   transition: all 0.4s ease-in-out;
 }
-.slide_cards > img:hover {
+.slide_cards > div:hover img {
   transform: translateY(-10px);
 }
 .button_primary a {
+}
+
+.slide_cards::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 197px;
+  height: 243px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 1) 0%);
+  opacity: 0.15; /* Équivaut à 15% */
+  filter: blur(13.99px);
+}
+.slide_cards > div:nth-child(3) svg {
+  left: 19px;
+  top: -39%;
+  height: 246px;
 }

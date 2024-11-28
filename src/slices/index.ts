@@ -11,5 +11,6 @@ export const components = {
   image_block: dynamic(() => import("./ImageBlock")),
   navigation_item: dynamic(() => import("./NavigationItem")),
   rich_text: dynamic(() => import("./RichText")),
+  socials: dynamic(() => import("./Socials")),
   trusted_by: dynamic(() => import("./TrustedBy")),
 };

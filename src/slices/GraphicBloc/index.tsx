@@ -3,6 +3,8 @@ import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import Rect from "@/ui/svg/Rect";
+import SvgShadowCard from "@/ui/svg/SvgShadowCard";
 import GridLayout from "@/ui/GridLayout";
 import ButtonPrimary from "@/ui/ButtonPrimary";
 
@@ -23,6 +25,7 @@ const GraphicBloc = ({ slice }: GraphicBlocProps): JSX.Element => {
       className="py-24 bg-white"
     >
       <GridLayout additional_class="relative bg-bg-primary h-[670px] overflow-hidden">
+        <Rect />
         <div className="flex flex-col gap-[122px] absolute top-28 left-8 w-[476px] max-w-full">
           <div className="flex flex-col gap-6">
             <PrismicRichText field={slice.primary.title} />
@@ -31,15 +34,20 @@ const GraphicBloc = ({ slice }: GraphicBlocProps): JSX.Element => {
 
           <ButtonPrimary link={slice.primary.button} />
         </div>
-        <div className="absolute right-0 bottom-0 flex flex-col gap-8 rotate-[-30deg]">
+        <div className="absolute right-[-7px] bottom-[46px] flex flex-col gap-8 rotate-[-30deg]">
           <div className="slide_cards flex">
             {slice.primary.images.map((item) => (
-              <PrismicNextImage field={item.image} key={item.image_id} />
+              <div key={item.image_id} className="relative">
+                <PrismicNextImage field={item.image} />
+              </div>
             ))}
           </div>
           <div className="slide_cards flex">
             {slice.primary.images_second_slide.map((item) => (
-              <PrismicNextImage field={item.image} key={item.image_id} />
+              <div key={item.image_id} className="relative">
+                <SvgShadowCard />
+                <PrismicNextImage field={item.image} />
+              </div>
             ))}
           </div>
         </div>

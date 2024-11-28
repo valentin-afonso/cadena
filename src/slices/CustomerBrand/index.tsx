@@ -13,7 +13,6 @@ export type CustomerBrandProps =
  */
 
 const CustomerBrand = ({ slice }: CustomerBrandProps): JSX.Element => {
-  console.log(slice.primary.logo);
   return (
     <section
       data-slice-type={slice.slice_type}

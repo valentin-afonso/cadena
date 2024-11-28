@@ -7,6 +7,7 @@ export default function ChevronRight() {
         viewBox="0 0 9 13"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="group-hover:translate-x-1 transition-all"
       >
         <path
           fillRule="evenodd"

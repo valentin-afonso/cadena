@@ -1,6 +1,7 @@
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import Header from "@/ui/Header";
+import Footer from "@/ui/Footer";
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
@@ -47,8 +48,9 @@ export default function RootLayout({
       <body className={satoshi.className}>
         <Header />
         {children}
+        <PrismicPreview repositoryName={repositoryName} />
+        <Footer />
       </body>
-      <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
 }

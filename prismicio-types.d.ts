@@ -4,6 +4,58 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type FooterDocumentDataSlicesSlice = SocialsSlice;
+
+/**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+  /**
+   * Title field in *Footer*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Copyright field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.copyright
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  copyright: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Footer*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<FooterDocumentDataSlicesSlice>;
+}
+
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<FooterDocumentData>, "footer", Lang>;
+
 type NavigationDocumentDataSlicesSlice = NavigationItemSlice;
 
 /**
@@ -180,7 +232,11 @@ interface TagDocumentData {
 export type TagDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<TagDocumentData>, "tag", Lang>;
 
-export type AllDocumentTypes = NavigationDocument | PageDocument | TagDocument;
+export type AllDocumentTypes =
+  | FooterDocument
+  | NavigationDocument
+  | PageDocument
+  | TagDocument;
 
 /**
  * Item in *AlternateGrid → Default → Primary → items*
@@ -928,6 +984,76 @@ export type RichTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Socials → Default → Primary → Social*
+ */
+export interface SocialsSliceDefaultPrimarySocialItem {
+  /**
+   * social_id field in *Socials → Default → Primary → Social*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: socials.default.primary.social[].social_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  social_id: prismic.KeyTextField;
+
+  /**
+   * link field in *Socials → Default → Primary → Social*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: socials.default.primary.social[].link
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Socials → Default → Primary*
+ */
+export interface SocialsSliceDefaultPrimary {
+  /**
+   * Social field in *Socials → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: socials.default.primary.social[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  social: prismic.GroupField<Simplify<SocialsSliceDefaultPrimarySocialItem>>;
+}
+
+/**
+ * Default variation for Socials Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SocialsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Socials*
+ */
+type SocialsSliceVariation = SocialsSliceDefault;
+
+/**
+ * Socials Shared Slice
+ *
+ * - **API ID**: `socials`
+ * - **Description**: Socials
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialsSlice = prismic.SharedSlice<
+  "socials",
+  SocialsSliceVariation
+>;
+
+/**
  * Item in *TrustedBy → Default → Primary → Logo*
  */
 export interface TrustedBySliceDefaultPrimaryLogoItem {
@@ -1018,6 +1144,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      FooterDocument,
+      FooterDocumentData,
+      FooterDocumentDataSlicesSlice,
       NavigationDocument,
       NavigationDocumentData,
       NavigationDocumentDataSlicesSlice,
@@ -1067,6 +1196,11 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      SocialsSlice,
+      SocialsSliceDefaultPrimarySocialItem,
+      SocialsSliceDefaultPrimary,
+      SocialsSliceVariation,
+      SocialsSliceDefault,
       TrustedBySlice,
       TrustedBySliceDefaultPrimaryLogoItem,
       TrustedBySliceDefaultPrimary,

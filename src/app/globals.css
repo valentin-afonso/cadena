@@ -7,6 +7,12 @@
 ::after {
   box-sizing: border-box;
 }
+::selection {
+  @apply text-white;
+  @apply bg-dark;
+  @apply dark:text-dark;
+  @apply dark:bg-purple-light;
+}
 body {
   font-size: 16px;
   @apply text-gray-primary;
@@ -40,6 +46,13 @@ p {
 }
 a {
   @apply inline-block;
+}
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 .wrapper_sections {
   min-height: calc(100vh - (140px + 80px));
@@ -77,18 +90,6 @@ a {
 }
 .slide_cards > div:hover img {
   transform: translateY(-10px);
-}
-
-.slide_cards::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 197px;
-  height: 243px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 1) 0%);
-  opacity: 0.15; /* Équivaut à 15% */
-  filter: blur(13.99px);
 }
 .slide_cards > div:nth-child(3) svg {
   left: 19px;
@@ -157,4 +158,64 @@ a {
   body {
     @apply bg-background text-foreground;
   }
+}
+@keyframes float-card {
+  0% {
+    transform: translate(-59px, 0px);
+  }
+  50% {
+    transform: translate(-59px, -20px);
+  }
+  100% {
+    transform: translate(-59px, 0px);
+  }
+}
+@keyframes float-price {
+  0% {
+    transform: translate(0, 125px);
+  }
+  50% {
+    transform: translate(0, 110px);
+  }
+  100% {
+    transform: translate(0, 125px);
+  }
+}
+@keyframes float-visa {
+  0% {
+    transform: translate(-31px, 0px);
+  }
+  50% {
+    transform: translate(-31px, -35px);
+  }
+  100% {
+    transform: translate(-31px, 0px);
+  }
+}
+@keyframes float-spotify {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+.floating_spotify {
+  transform: translatey(0px);
+  animation: float-spotify 16s ease-in-out infinite;
+}
+.floating_card {
+  transform: translatey(0px);
+  animation: float-card 6s ease-in-out infinite;
+}
+.floating_price {
+  transform: translatey(0px);
+  animation: float-price 9s ease-in-out infinite;
+}
+.floating_visa {
+  transform: translatey(0px);
+  animation: float-visa 12s ease-in-out infinite 1s;
 }

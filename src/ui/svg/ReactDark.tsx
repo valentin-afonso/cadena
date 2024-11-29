@@ -1,4 +1,4 @@
-export default function Rect() {
+export default function ReactDark() {
   return (
     <>
       <svg
@@ -7,7 +7,7 @@ export default function Rect() {
         viewBox="0 0 609 365"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute right-0 bottom-0 dark:hidden"
+        className="absolute right-0 bottom-0"
       >
         <rect
           opacity="0.08"
@@ -16,19 +16,19 @@ export default function Rect() {
           width="735.532"
           height="302.642"
           transform="rotate(-30 0.623535 368.002)"
-          fill="url(#paint0_linear_10632_38025)"
+          fill="url(#paint0_linear_10632_38703)"
         />
         <defs>
           <linearGradient
-            id="paint0_linear_10632_38025"
+            id="paint0_linear_10632_38703"
             x1="368.389"
             y1="368.002"
             x2="368.389"
             y2="670.644"
             gradientUnits="userSpaceOnUse"
           >
-            <stop />
-            <stop offset="1" stopOpacity="0" />
+            <stop stopColor="#F4DFD8" />
+            <stop offset="1" stopColor="#F4DFD8" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>

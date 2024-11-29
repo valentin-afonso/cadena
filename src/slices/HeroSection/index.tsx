@@ -1,14 +1,11 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import { Tag, TagStatus, TagText } from "@/ui/Tag";
 import GridLayout from "@/ui/GridLayout";
 import SvgAppStore from "@/ui/svg/SvgAppStore";
 import SvgPlayStore from "@/ui/svg/SvgPlayStore";
-import BlocHeroPrice from "@/ui/BlocHeroPrice";
-import BlocHeroVisaTransac from "@/ui/BlocHeroVisaTransac";
-import IconCheckedXl from "@/ui/svg/IconCheckedXl";
+import HeroImages from "@/ui/HeroImages";
 /**
  * Props for `HeroSection`.
  */
@@ -45,20 +42,7 @@ const HeroSection = ({ slice }: HeroSectionProps): JSX.Element => {
               </div>
             </div>
           </div>
-          <div className="relative">
-            <div className="flex flex-col items-end gap-[78px]">
-              <BlocHeroVisaTransac />
-              <PrismicNextImage field={slice.primary.image_spotify} />
-            </div>
-
-            <div className="absolute left-0 top-[110px] translate-x-[-59px] w-max">
-              <div className="shadow_hero_card">
-                <PrismicNextImage field={slice.primary.image_card} />
-              </div>
-              <IconCheckedXl />
-            </div>
-            <BlocHeroPrice />
-          </div>
+          <HeroImages slice={slice} />
         </div>
       </GridLayout>
     </section>

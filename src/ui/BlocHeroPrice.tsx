@@ -2,7 +2,7 @@ import IconChecked from "@/ui/svg/IconChecked";
 
 export default function BlocHeroPrice() {
   return (
-    <div className="absolute bottom-0 left-[39px] translate-y-[125px] flex flex-col bg-white rounded-3xl overflow-hidden w-[194px]">
+    <div className="absolute bottom-0 left-[39px] translate-y-[125px] flex flex-col bg-white rounded-3xl overflow-hidden w-[194px] floating_price">
       <div className="flex flex-col justify-center items-center gap-3 pt-[28px] pb-[40px]">
         <p className="text-[#A0AEC0] uppercase text-xs">Payment to</p>
         <svg

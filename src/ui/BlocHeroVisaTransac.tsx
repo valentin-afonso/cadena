@@ -2,7 +2,7 @@ import SvgVisa from "@/ui/svg/SvgVisa";
 
 export default function BlocHeroVisaTransac() {
   return (
-    <div className="relative bg-white rounded-xl flex items-center justify-between w-[343px] p-[20px] translate-x-[-31px]">
+    <div className="relative bg-white rounded-xl flex items-center justify-between w-[343px] p-[20px] translate-x-[-31px] floating_visa">
       <div className="flex items-center gap-4">
         <SvgVisa />
         <div className="flex flex-col gap-1">

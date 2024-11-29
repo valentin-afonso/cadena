@@ -4,6 +4,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import Rect from "@/ui/svg/Rect";
+import ReactDark from "@/ui/svg/ReactDark";
 import SvgShadowCard from "@/ui/svg/SvgShadowCard";
 import GridLayout from "@/ui/GridLayout";
 import ButtonPrimary from "@/ui/ButtonPrimary";
@@ -26,6 +27,7 @@ const GraphicBloc = ({ slice }: GraphicBlocProps): JSX.Element => {
     >
       <GridLayout additional_class="relative bg-bg-primary dark:bg-bg-secondary-dark h-[670px] overflow-hidden rounded-3xl">
         <Rect />
+        <ReactDark />
         <div className="flex flex-col gap-[122px] absolute top-28 left-8 w-[476px] max-w-full">
           <div className="flex flex-col gap-6 dark:text-gray-tertiary-dark">
             <PrismicRichText field={slice.primary.title} />

@@ -57,7 +57,17 @@ a {
     0px 5.95923376083374px 8.938850402832031px 0px rgba(68, 55, 0, 1%),
     0px 1.986411213874817px 3.972822427749634px 0px rgba(68, 55, 0, 1%);
 }
-
+.shadow_visa {
+  box-shadow: 0px 10px 20px 0px rgba(234, 0, 27, 25%);
+}
+.shadow_hero_card {
+  box-shadow:
+    -40px 70px 100px 0px rgba(16, 16, 16, 10%),
+    inset -0.6740739941596985px -0.6740739941596985px 1.348147988319397px 0px
+      rgba(0, 0, 0, 4%),
+    inset 0px 1.348147988319397px 1.348147988319397px 0px
+      rgba(255, 255, 255, 15%);
+}
 .slide_cards img {
   position: relative;
   transition: all 0.4s ease-in-out;

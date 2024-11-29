@@ -808,6 +808,26 @@ export interface HeroSectionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Image card field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.image_card
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_card: prismic.ImageField<never>;
+
+  /**
+   * Image spotify field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.image_spotify
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_spotify: prismic.ImageField<never>;
 }
 
 /**

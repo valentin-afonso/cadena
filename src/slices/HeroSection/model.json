@@ -58,6 +58,22 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "image_card": {
+          "type": "Image",
+          "config": {
+            "label": "Image card",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_spotify": {
+          "type": "Image",
+          "config": {
+            "label": "Image spotify",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}

@@ -5,7 +5,7 @@ import NavigationRight from "@/ui/NavigationRight";
 
 export default function Header() {
   return (
-    <header className="bg-bg-primary">
+    <header className="bg-bg-primary dark:bg-bg-primary-dark">
       <GridLayout additional_class="flex items-center justify-between py-4">
         <div className="flex items-center gap-10">
           <Logo />

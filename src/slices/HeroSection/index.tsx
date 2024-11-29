@@ -25,7 +25,7 @@ const HeroSection = ({ slice }: HeroSectionProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-bg-primary pb-24 pt-16"
+      className="bg-bg-primary dark:bg-bg-primary-dark pb-32 pt-16"
     >
       <GridLayout>
         <div className="flex items-center justify-between">
@@ -37,7 +37,7 @@ const HeroSection = ({ slice }: HeroSectionProps): JSX.Element => {
               </Tag>
               <PrismicRichText field={slice.primary.custom_title} />
             </div>
-            <div className="flex flex-col gap-7 text-xl text-gray-secondary">
+            <div className="flex flex-col gap-7 text-xl text-gray-secondary dark:text-gray-secondary-dark">
               <PrismicRichText field={slice.primary.text} />
               <div className="flex gap-4">
                 <SvgPlayStore />

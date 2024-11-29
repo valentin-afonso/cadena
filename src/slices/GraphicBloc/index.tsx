@@ -22,12 +22,12 @@ const GraphicBloc = ({ slice }: GraphicBlocProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="py-24 bg-white"
+      className="py-24 bg-white dark:bg-bg-primary-dark"
     >
-      <GridLayout additional_class="relative bg-bg-primary h-[670px] overflow-hidden">
+      <GridLayout additional_class="relative bg-bg-primary dark:bg-bg-secondary-dark h-[670px] overflow-hidden rounded-3xl">
         <Rect />
         <div className="flex flex-col gap-[122px] absolute top-28 left-8 w-[476px] max-w-full">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 dark:text-gray-tertiary-dark">
             <PrismicRichText field={slice.primary.title} />
             <PrismicRichText field={slice.primary.text} />
           </div>

@@ -5,7 +5,7 @@ export default function NavigationLink({ link }: any) {
     return (
       <Link
         href={link.url}
-        className="bg-dark text-white font-bold rounded-[10px] py-[10px] px-[18px]"
+        className="bg-dark text-white dark:bg-white dark:text-dark font-bold rounded-[10px] py-[10px] px-[18px]"
       >
         {link.text}
       </Link>
@@ -13,7 +13,10 @@ export default function NavigationLink({ link }: any) {
   }
   return (
     <>
-      <Link href={link.url} className="text-gray-tertiary font-medium">
+      <Link
+        href={link.url}
+        className="text-gray-tertiary dark:text-white font-medium"
+      >
         {link.text}
       </Link>
     </>

@@ -20,10 +20,10 @@ const TrustedBy = ({ slice }: TrustedByProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-bg-primary py-12"
+      className="bg-bg-primary dark:bg-bg-primary-dark py-12"
     >
       <GridLayout additional_class="flex flex-col items-center gap-6">
-        <p className="text-sm font-medium text-[#797B89]">
+        <p className="text-sm font-medium text-[#797B89] dark:text-gray-secondary-dark">
           {slice.primary.text}
         </p>
         <ul className="flex items-center justify-between w-full">

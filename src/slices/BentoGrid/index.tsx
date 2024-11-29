@@ -25,7 +25,7 @@ const BentoGrid = ({ slice }: BentoGridProps): JSX.Element => {
           {slice.primary.bentobloc.map((item) => (
             <div
               key={item.id_bloc}
-              className="flex flex-col justify-center items-center gap-7 bg-white rounded-3xl text-center px-14 py-10 bento-shadow"
+              className="flex flex-col justify-center items-center gap-7 bg-white dark:bg-bg-secondary-dark dark:text-gray-secondary-dark rounded-3xl text-center px-14 py-10 bento-shadow"
             >
               <PrismicRichText field={item.title} />
               <PrismicRichText field={item.text} />

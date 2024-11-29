@@ -15,16 +15,19 @@ h1 {
   @apply text-4xl;
   @apply font-bold;
   @apply text-gray-secondary;
+  @apply dark:text-white;
 }
 h2 {
   font-size: 2.6rem;
   @apply font-medium;
   @apply text-gray-secondary;
+  @apply dark:text-white;
 }
 h3 {
   @apply font-normal;
   @apply text-2xl;
   @apply text-gray-tertiary;
+  @apply dark:text-gray-secondary-dark;
 }
 h1 strong,
 h2 strong,
@@ -74,8 +77,6 @@ a {
 }
 .slide_cards > div:hover img {
   transform: translateY(-10px);
-}
-.button_primary a {
 }
 
 .slide_cards::after {

@@ -5,6 +5,7 @@ import Footer from "@/ui/Footer";
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
+import { ThemeProvider } from "@/app/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,11 +46,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={satoshi.className}>
-        <Header />
-        {children}
-        <PrismicPreview repositoryName={repositoryName} />
-        <Footer />
+      <body className={`${satoshi.className} dark:bg-bg-primary-dark`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+          <PrismicPreview repositoryName={repositoryName} />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -6,7 +6,7 @@ export function Tag({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex items-center gap-3 py-1 pl-1 pr-[10px] bg-purple-light text-purple font-medium text-sm rounded-full w-max">
+    <div className="flex items-center gap-3 py-1 pl-1 pr-[10px] bg-purple-light text-purple dark:text-[#6941C6] font-medium text-sm rounded-full w-max">
       {children}
     </div>
   );
@@ -18,7 +18,9 @@ export function TagStatus({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="bg-white rounded-full py-[2px] px-[10px]">{children}</div>
+    <div className="bg-white dark:bg-[#7F56D9] dark:text-white rounded-full py-[2px] px-[10px]">
+      {children}
+    </div>
   );
 }
 

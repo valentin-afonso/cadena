@@ -9,8 +9,10 @@ export const components = {
   graphic_bloc: dynamic(() => import("./GraphicBloc")),
   hero_section: dynamic(() => import("./HeroSection")),
   image_block: dynamic(() => import("./ImageBlock")),
+  login_form: dynamic(() => import("./LoginForm")),
   navigation_item: dynamic(() => import("./NavigationItem")),
   rich_text: dynamic(() => import("./RichText")),
+  signin_form: dynamic(() => import("./SigninForm")),
   socials: dynamic(() => import("./Socials")),
   trusted_by: dynamic(() => import("./TrustedBy")),
 };

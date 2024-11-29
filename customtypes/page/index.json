@@ -27,6 +27,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "signin_form": {
+              "type": "SharedSlice"
+            },
+            "login_form": {
+              "type": "SharedSlice"
+            },
             "graphic_bloc": {
               "type": "SharedSlice"
             },

@@ -1,0 +1,28 @@
+{
+  "id": "login_form",
+  "type": "SharedSlice",
+  "name": "LoginForm",
+  "description": "LoginForm",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em,rtl,o-list-item,list-item,image,hyperlink,paragraph,preformatted,embed"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

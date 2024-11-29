@@ -102,6 +102,8 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | SigninFormSlice
+  | LoginFormSlice
   | GraphicBlocSlice
   | BentoGridSlice
   | TrustedBySlice
@@ -884,6 +886,51 @@ export type ImageBlockSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *LoginForm → Default → Primary*
+ */
+export interface LoginFormSliceDefaultPrimary {
+  /**
+   * Title field in *LoginForm → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: login_form.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for LoginForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LoginFormSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LoginFormSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *LoginForm*
+ */
+type LoginFormSliceVariation = LoginFormSliceDefault;
+
+/**
+ * LoginForm Shared Slice
+ *
+ * - **API ID**: `login_form`
+ * - **Description**: LoginForm
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LoginFormSlice = prismic.SharedSlice<
+  "login_form",
+  LoginFormSliceVariation
+>;
+
+/**
  * Primary content in *NavigationItem → Default → Primary*
  */
 export interface NavigationItemSliceDefaultPrimary {
@@ -981,6 +1028,51 @@ type RichTextSliceVariation = RichTextSliceDefault;
 export type RichTextSlice = prismic.SharedSlice<
   "rich_text",
   RichTextSliceVariation
+>;
+
+/**
+ * Primary content in *SigninForm → Default → Primary*
+ */
+export interface SigninFormSliceDefaultPrimary {
+  /**
+   * Title field in *SigninForm → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: signin_form.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for SigninForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SigninFormSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SigninFormSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SigninForm*
+ */
+type SigninFormSliceVariation = SigninFormSliceDefault;
+
+/**
+ * SigninForm Shared Slice
+ *
+ * - **API ID**: `signin_form`
+ * - **Description**: SigninForm
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SigninFormSlice = prismic.SharedSlice<
+  "signin_form",
+  SigninFormSliceVariation
 >;
 
 /**
@@ -1188,6 +1280,10 @@ declare module "@prismicio/client" {
       ImageBlockSliceDefaultPrimary,
       ImageBlockSliceVariation,
       ImageBlockSliceDefault,
+      LoginFormSlice,
+      LoginFormSliceDefaultPrimary,
+      LoginFormSliceVariation,
+      LoginFormSliceDefault,
       NavigationItemSlice,
       NavigationItemSliceDefaultPrimary,
       NavigationItemSliceVariation,
@@ -1196,6 +1292,10 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      SigninFormSlice,
+      SigninFormSliceDefaultPrimary,
+      SigninFormSliceVariation,
+      SigninFormSliceDefault,
       SocialsSlice,
       SocialsSliceDefaultPrimarySocialItem,
       SocialsSliceDefaultPrimary,

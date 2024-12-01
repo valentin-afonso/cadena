@@ -9,7 +9,6 @@ import Image from "next/image";
 export type HeroSectionProps = SliceComponentProps<Content.HeroSectionSlice>;
 
 export default function HeroImages({ slice }: any) {
-  console.log(slice.primary.image_card);
   return (
     <div className="relative max-w-[335px] lg:max-w-[400px] xl:max-w-none">
       <div className="flex flex-col items-end gap-[78px]">

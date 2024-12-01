@@ -20,7 +20,6 @@ export default async function Socials() {
           {slice.primary.social.map((item) => {
             const idBloc = item.social_id || "";
             const IconComponent = techIconMap[idBloc];
-            console.log(item.link);
             return (
               <li key={item.social_id} className="h-[24px]">
                 <Link href={`${item.link}`} target="_blank">

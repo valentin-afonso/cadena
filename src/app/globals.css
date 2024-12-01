@@ -91,6 +91,9 @@ img {
 .slide_cards > div:hover img {
   transform: translateY(-10px);
 }
+.slide_cards > div:nth-child(2) svg {
+  height: 220px;
+}
 .slide_cards > div:nth-child(3) svg {
   left: 19px;
   top: -39%;

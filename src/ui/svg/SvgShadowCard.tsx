@@ -9,7 +9,7 @@ export default function SvgShadowCard() {
         viewBox="0 0 226 180"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute top-[-10%] left-[14px] rotate-[388deg]"
+        className="absolute top-[-29%] left-[14px] rotate-[388deg]"
       >
         <g opacity="0.15" filter="url(#filter0_f_10632_38027)">
           <path

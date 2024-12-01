@@ -6,6 +6,9 @@ import GridLayout from "@/ui/GridLayout";
 import SvgAppStore from "@/ui/svg/SvgAppStore";
 import SvgPlayStore from "@/ui/svg/SvgPlayStore";
 import HeroImages from "@/ui/HeroImages";
+import AnimateTitle from "@/ui/AnimateTitle";
+import AnimateText from "@/ui/AnimateText";
+
 /**
  * Props for `HeroSection`.
  */
@@ -32,10 +35,14 @@ const HeroSection = ({ slice }: HeroSectionProps): JSX.Element => {
                 <TagStatus>{slice.primary.tag_status}</TagStatus>
                 <TagText>{slice.primary.tag}</TagText>
               </Tag>
-              <PrismicRichText field={slice.primary.custom_title} />
+              <AnimateTitle>
+                <PrismicRichText field={slice.primary.custom_title} />
+              </AnimateTitle>
             </div>
             <div className="flex flex-col gap-7 text-xl text-gray-secondary dark:text-gray-secondary-dark">
-              <PrismicRichText field={slice.primary.text} />
+              <AnimateText>
+                <PrismicRichText field={slice.primary.text} />
+              </AnimateText>
               <div className="flex gap-4">
                 <SvgPlayStore />
                 <SvgAppStore />

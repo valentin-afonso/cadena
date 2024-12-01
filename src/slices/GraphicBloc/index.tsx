@@ -8,6 +8,9 @@ import ReactDark from "@/ui/svg/ReactDark";
 import SvgShadowCard from "@/ui/svg/SvgShadowCard";
 import GridLayout from "@/ui/GridLayout";
 import ButtonPrimary from "@/ui/ButtonPrimary";
+import AnimateSlideCards from "@/ui/AnimateSlideCards";
+import AnimateTitle from "@/ui/AnimateTitle";
+import AnimateText from "@/ui/AnimateText";
 
 /**
  * Props for `GraphicBloc`.
@@ -30,28 +33,32 @@ const GraphicBloc = ({ slice }: GraphicBlocProps): JSX.Element => {
         <ReactDark />
         <div className="flex flex-col gap-[122px] absolute top-28 left-8 w-[476px] max-w-full">
           <div className="flex flex-col gap-6 dark:text-gray-tertiary-dark">
-            <PrismicRichText field={slice.primary.title} />
-            <PrismicRichText field={slice.primary.text} />
+            <AnimateTitle>
+              <PrismicRichText field={slice.primary.title} />
+            </AnimateTitle>
+            <AnimateText>
+              <PrismicRichText field={slice.primary.text} />
+            </AnimateText>
           </div>
 
           <ButtonPrimary link={slice.primary.button} />
         </div>
         <div className="absolute right-[-7px] bottom-[46px] flex flex-col gap-8 rotate-[-30deg]">
-          <div className="slide_cards flex">
+          <AnimateSlideCards directionStart="0px" directionEnd="-180px">
             {slice.primary.images.map((item) => (
               <div key={item.image_id} className="relative">
                 <PrismicNextImage field={item.image} />
               </div>
             ))}
-          </div>
-          <div className="slide_cards flex">
+          </AnimateSlideCards>
+          <AnimateSlideCards directionStart="0px" directionEnd="180px">
             {slice.primary.images_second_slide.map((item) => (
               <div key={item.image_id} className="relative">
                 <SvgShadowCard />
                 <PrismicNextImage field={item.image} />
               </div>
             ))}
-          </div>
+          </AnimateSlideCards>
         </div>
       </GridLayout>
     </section>

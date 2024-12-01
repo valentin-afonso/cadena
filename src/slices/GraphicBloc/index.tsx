@@ -47,8 +47,8 @@ const GraphicBloc = ({ slice }: GraphicBlocProps): JSX.Element => {
             ))}
           </AnimateSlideCards>
         </div>
-        <div className="flex flex-col gap-[122px] absolute top-28 left-8 w-[476px] max-w-full">
-          <div className="flex flex-col gap-6 dark:text-gray-tertiary-dark">
+        <div className="flex flex-col gap-[122px] absolute top-28 left-8 w-[476px] max-w-[300px] md:max-w-full">
+          <div className="graphic_bloc_animated flex flex-col gap-6 dark:text-gray-tertiary-dark">
             <AnimateTitle>
               <PrismicRichText field={slice.primary.title} />
             </AnimateTitle>

@@ -16,6 +16,7 @@
 body {
   font-size: 16px;
   @apply text-gray-primary;
+  @apply overflow-x-hidden;
 }
 h1 {
   @apply text-2xl;
@@ -178,13 +179,13 @@ img {
 }
 @keyframes float-card {
   0% {
-    transform: translate(-59px, 0px);
+    transform: translate(var(--card-x), 0px);
   }
   50% {
-    transform: translate(-59px, -20px);
+    transform: translate(var(--card-x), -20px);
   }
   100% {
-    transform: translate(-59px, 0px);
+    transform: translate(var(--card-x), 0px);
   }
 }
 @keyframes float-price {
@@ -200,13 +201,13 @@ img {
 }
 @keyframes float-visa {
   0% {
-    transform: translate(-31px, 0px);
+    transform: translate(var(--visa-x), 0px);
   }
   50% {
-    transform: translate(-31px, -35px);
+    transform: translate(var(--visa-x), -35px);
   }
   100% {
-    transform: translate(-31px, 0px);
+    transform: translate(var(--visa-x), 0px);
   }
 }
 @keyframes float-spotify {
@@ -221,20 +222,27 @@ img {
   }
 }
 .floating_spotify {
-  transform: translatey(0px);
   animation: float-spotify 16s ease-in-out infinite;
 }
 .floating_card {
-  transform: translatey(0px);
+  --card-x: -25px;
   animation: float-card 6s ease-in-out infinite;
 }
 
 .floating_visa {
-  transform: translatey(0px);
+  --visa-x: 0px;
   animation: float-visa 12s ease-in-out infinite 1s;
 }
 
 .floating_price {
-  transform: translatey(0px);
   animation: float-price 9s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .floating_card {
+    --card-x: -59px;
+  }
+  .floating_visa {
+    --visa-x: -31px;
+  }
 }

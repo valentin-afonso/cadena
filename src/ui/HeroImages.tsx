@@ -18,7 +18,7 @@ export default function HeroImages({ slice }: any) {
         </div>
       </div>
 
-      <div className="absolute left-0 top-[110px] translate-x-[-59px] w-max floating_card">
+      <div className="absolute left-2 sm:left-0 top-[110px] translate-x-[-10px] sm:translate-x-[-59px] w-max floating_card">
         <div className="shadow_hero_card">
           <Image
             src={slice.primary.image_card.url}

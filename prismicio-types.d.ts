@@ -33,6 +33,17 @@ interface FooterDocumentData {
   copyright: prismic.KeyTextField;
 
   /**
+   * Link design field in *Footer*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.link_design
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_design: prismic.LinkField;
+
+  /**
    * Slice Zone field in *Footer*
    *
    * - **Field Type**: Slice Zone

@@ -20,7 +20,7 @@ export default function BentoBloc({ item }: { item: any }) {
 
   return (
     <motion.div
-      className="flex flex-col justify-center items-center gap-7 bg-white dark:bg-bg-secondary-dark dark:text-gray-secondary-dark rounded-3xl text-center px-14 py-10 bento-shadow"
+      className="flex flex-col justify-center items-center gap-7 bg-white dark:bg-bg-secondary-dark dark:text-gray-secondary-dark rounded-3xl text-center px-14 py-10 hover:scale-[0.98] scale-100 bento-shadow transition-all"
       style={{
         perspective: 400,
       }}

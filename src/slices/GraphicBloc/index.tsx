@@ -1,7 +1,6 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import Rect from "@/ui/svg/Rect";
 import ReactDark from "@/ui/svg/ReactDark";

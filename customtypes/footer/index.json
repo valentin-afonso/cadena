@@ -28,6 +28,16 @@
           "placeholder": ""
         }
       },
+      "link_design": {
+        "type": "Link",
+        "config": {
+          "label": "Link design",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "select": null,
+          "allowText": true
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

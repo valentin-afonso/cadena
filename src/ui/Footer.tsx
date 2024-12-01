@@ -5,7 +5,7 @@ import FooterCopyright from "@/ui/FooterCopyright";
 export default function Footer() {
   return (
     <footer className="py-12">
-      <GridLayout additional_class="flex items-center justify-between">
+      <GridLayout additional_class="flex flex-col gap-4 md:gap-0 md:flex-row items-center justify-between">
         <Socials />
         <Logo />
         <FooterCopyright />

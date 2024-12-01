@@ -9,7 +9,7 @@ export default async function NavigationRight() {
   return (
     <div className="flex items-center gap-4">
       <ToogleDarkMode />
-      <nav>
+      <nav className="hidden md:block">
         <ul className="flex items-center gap-3">
           {navigation.data.slices.map((slice) => (
             <li key={slice.id}>

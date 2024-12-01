@@ -7,7 +7,7 @@ export default function IconChecked() {
         viewBox="0 0 84 85"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className=""
+        className="w-12 h-12 xl:w-auto xl:h-auto"
       >
         <g filter="url(#filter0_d_10943_1077)">
           <circle cx="41.9942" cy="30.5611" r="19.9791" fill="white" />

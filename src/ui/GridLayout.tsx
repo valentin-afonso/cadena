@@ -10,7 +10,9 @@ export default function GridLayout({
   additional_class,
 }: GridLayoutType) {
   return (
-    <div className={`w-[1280px] max-w-full m-auto ${additional_class}`}>
+    <div
+      className={`w-[1280px] max-w-full m-auto px-5 md:px-12 xl:px-0 ${additional_class}`}
+    >
       {children}
     </div>
   );

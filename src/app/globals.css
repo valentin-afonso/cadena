@@ -18,13 +18,13 @@ body {
   @apply text-gray-primary;
 }
 h1 {
-  @apply text-4xl;
+  @apply text-2xl;
   @apply font-bold;
   @apply text-gray-secondary;
   @apply dark:text-white;
 }
 h2 {
-  font-size: 2.6rem;
+  @apply text-2xl;
   @apply font-medium;
   @apply text-gray-secondary;
   @apply dark:text-white;
@@ -35,6 +35,15 @@ h3 {
   @apply text-gray-tertiary;
   @apply dark:text-gray-secondary-dark;
 }
+@media (min-width: 768px) {
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    font-size: 2.6rem;
+  }
+}
+
 h1 strong,
 h2 strong,
 h3 strong,
@@ -58,8 +67,13 @@ img {
   min-height: calc(100vh - (140px + 80px));
 }
 .bento_grid > div:nth-child(3) {
-  grid-column: 3 / 4;
-  grid-row: 1 / span 2;
+  grid-row: 5 / span 2;
+}
+@media (min-width: 1024px) {
+  .bento_grid > div:nth-child(3) {
+    grid-column: 3 / 4;
+    grid-row: 1 / span 2;
+  }
 }
 
 .bento-shadow {
@@ -214,11 +228,13 @@ img {
   transform: translatey(0px);
   animation: float-card 6s ease-in-out infinite;
 }
-.floating_price {
-  transform: translatey(0px);
-  animation: float-price 9s ease-in-out infinite;
-}
+
 .floating_visa {
   transform: translatey(0px);
   animation: float-visa 12s ease-in-out infinite 1s;
+}
+
+.floating_price {
+  transform: translatey(0px);
+  animation: float-price 9s ease-in-out infinite;
 }

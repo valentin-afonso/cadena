@@ -24,7 +24,7 @@ const BentoGrid = ({ slice }: BentoGridProps): JSX.Element => {
         <AnimateTitle>
           <PrismicRichText field={slice.primary.title} />
         </AnimateTitle>
-        <div className="bento_grid grid grid-cols-3 grid-rows-2 gap-7">
+        <div className="bento_grid grid grid-cols-1 lg:grid-cols-3 grid-rows-3 lg:grid-rows-2 gap-7">
           {slice.primary.bentobloc.map((item) => (
             <BentoBloc item={item} key={item.id_bloc} />
           ))}

@@ -26,7 +26,7 @@ const TrustedBy = ({ slice }: TrustedByProps): JSX.Element => {
         <p className="text-sm font-medium text-[#797B89] dark:text-gray-secondary-dark">
           {slice.primary.text}
         </p>
-        <ul className="flex items-center justify-between w-full">
+        <ul className="flex items-center justify-center md:justify-between flex-wrap gap-14 md:gap-0 w-full">
           {slice.primary.logo.map((item) => (
             <li
               key={item.image.id}

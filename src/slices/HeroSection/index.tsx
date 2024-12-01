@@ -28,7 +28,7 @@ const HeroSection = ({ slice }: HeroSectionProps): JSX.Element => {
       className="bg-bg-primary dark:bg-bg-primary-dark pb-32 pt-16"
     >
       <GridLayout>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col lg:flex-row gap-[70px] lg:gap-0 items-center justify-between">
           <div className="w-[490px] max-w-full flex flex-col gap-6">
             <div className=" flex flex-col gap-4">
               <Tag>
@@ -39,7 +39,7 @@ const HeroSection = ({ slice }: HeroSectionProps): JSX.Element => {
                 <PrismicRichText field={slice.primary.custom_title} />
               </AnimateTitle>
             </div>
-            <div className="flex flex-col gap-7 text-xl text-gray-secondary dark:text-gray-secondary-dark">
+            <div className="flex flex-col gap-7 text-base md:text-xl text-gray-secondary dark:text-gray-secondary-dark">
               <AnimateText>
                 <PrismicRichText field={slice.primary.text} />
               </AnimateText>

@@ -27,21 +27,9 @@ const GraphicBloc = ({ slice }: GraphicBlocProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="py-24 bg-white dark:bg-bg-primary-dark"
     >
-      <GridLayout additional_class="relative bg-bg-primary dark:bg-bg-secondary-dark h-[670px] overflow-hidden rounded-3xl">
+      <GridLayout additional_class="relative bg-bg-primary dark:bg-bg-secondary-dark h-[805px] lg:h-[670px] overflow-hidden rounded-3xl">
         <Rect />
         <ReactDark />
-        <div className="flex flex-col gap-[122px] absolute top-28 left-8 w-[476px] max-w-full">
-          <div className="flex flex-col gap-6 dark:text-gray-tertiary-dark">
-            <AnimateTitle>
-              <PrismicRichText field={slice.primary.title} />
-            </AnimateTitle>
-            <AnimateText>
-              <PrismicRichText field={slice.primary.text} />
-            </AnimateText>
-          </div>
-
-          <ButtonPrimary link={slice.primary.button} />
-        </div>
         <div className="absolute right-[-7px] bottom-[46px] flex flex-col gap-8 rotate-[-30deg]">
           <AnimateSlideCards directionStart="0px" directionEnd="-180px">
             {slice.primary.images.map((item) => (
@@ -58,6 +46,18 @@ const GraphicBloc = ({ slice }: GraphicBlocProps): JSX.Element => {
               </div>
             ))}
           </AnimateSlideCards>
+        </div>
+        <div className="flex flex-col gap-[122px] absolute top-28 left-8 w-[476px] max-w-full">
+          <div className="flex flex-col gap-6 dark:text-gray-tertiary-dark">
+            <AnimateTitle>
+              <PrismicRichText field={slice.primary.title} />
+            </AnimateTitle>
+            <AnimateText>
+              <PrismicRichText field={slice.primary.text} />
+            </AnimateText>
+          </div>
+
+          <ButtonPrimary link={slice.primary.button} />
         </div>
       </GridLayout>
     </section>

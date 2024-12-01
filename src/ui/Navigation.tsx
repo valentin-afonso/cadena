@@ -6,7 +6,7 @@ export default async function Navigation() {
   const client = createClient();
   const navigation = await client.getByUID("navigation", "navigation-menu");
   return (
-    <nav>
+    <nav className="hidden md:block">
       <ul className="flex gap-8">
         {/* Renders top-level links */}
         {navigation.data.slices.map((slice) => (

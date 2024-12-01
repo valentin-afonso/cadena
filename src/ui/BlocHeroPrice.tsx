@@ -2,15 +2,18 @@ import IconChecked from "@/ui/svg/IconChecked";
 
 export default function BlocHeroPrice() {
   return (
-    <div className="absolute bottom-0 left-[39px] translate-y-[125px] flex flex-col bg-white rounded-3xl overflow-hidden w-[194px] floating_price">
-      <div className="flex flex-col justify-center items-center gap-3 pt-[28px] pb-[40px]">
-        <p className="text-[#A0AEC0] uppercase text-xs">Payment to</p>
+    <div className="absolute bottom-14 xl:bottom-0 left-[21px] xl:left-[39px] flex flex-col bg-white rounded-3xl overflow-hidden w-[107px] xl:w-[194px] floating_price">
+      <div className="flex flex-col justify-center items-center gap-1 xl:gap-3 pt-[15px] xl:pt-[28px] pb-[22px] xl:pb-[40px]">
+        <p className="text-[#A0AEC0] uppercase text-[7px] xl:text-xs">
+          Payment to
+        </p>
         <svg
           width="134"
           height="33"
           viewBox="0 0 134 33"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="max-w-full w-[74px] xl:w-auto"
         >
           <path
             fillRule="evenodd"
@@ -20,12 +23,12 @@ export default function BlocHeroPrice() {
           />
         </svg>
       </div>
-      <div className="absolute left-0 top-[45%] w-full flex justify-center">
+      <div className="absolute left-0 top-[48%] xl:top-[45%] w-full flex justify-center">
         <IconChecked />
       </div>
 
       <div className="flex justify-center items-center bg-[#EBBCAD]">
-        <p className="text text-3xl text-black font-bold pt-[33px] pb-[18px]">
+        <p className="text-base xl:text-3xl text-black font-bold pt-[18px] xl:pt-[33px] pb-[9px] xl:pb-[18px]">
           $120
         </p>
       </div>

@@ -8,6 +8,7 @@ import SvgPlayStore from "@/ui/svg/SvgPlayStore";
 import HeroImages from "@/ui/HeroImages";
 import AnimateTitle from "@/ui/AnimateTitle";
 import AnimateText from "@/ui/AnimateText";
+import Link from "next/link";
 
 /**
  * Props for `HeroSection`.
@@ -44,8 +45,12 @@ const HeroSection = ({ slice }: HeroSectionProps): JSX.Element => {
                 <PrismicRichText field={slice.primary.text} />
               </AnimateText>
               <div className="flex gap-4">
-                <SvgPlayStore />
-                <SvgAppStore />
+                <Link href="/">
+                  <SvgPlayStore />
+                </Link>
+                <Link href="/">
+                  <SvgAppStore />
+                </Link>
               </div>
             </div>
           </div>

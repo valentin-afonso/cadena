@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import Header from "@/ui/Header";
@@ -38,6 +39,39 @@ const satoshi = localFont({
     },
   ],
 });
+
+export const metadata: Metadata = {
+  title: "Cadena",
+  description:
+    "Welcome to Cadena, Beautifull landing page build with Nextjs and Prismic. Design by @Benbyx",
+  openGraph: {
+    title: "Cadena",
+    description:
+      "Welcome to Cadena, Beautifull landing page build with Nextjs and Prismic. Design by @Benbyx",
+    type: "article",
+    url: "https://cadena-afso.vercel.app/",
+    images: [
+      {
+        url: "https://cadena-afso.vercel.app/twitter-image.jpg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cadena",
+    description:
+      "Welcome to Cadena, Beautifull landing page build with Nextjs and Prismic. Design by @Benbyx",
+    creator: "@valentinafso",
+    images: [
+      {
+        url: "https://cadena-afso.vercel.app/twitter-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cadena",
+      },
+    ],
+  },
+};
 
 export default function RootLayout({
   children,
